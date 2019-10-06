@@ -46,19 +46,6 @@ public class Key {
         this.keyTransformed = Transformations.binaryToString(binaryTransformed);
     }
 
-    //Удаляет check биты из ключа
-    private String transformToBinaryWithoutCheckBits(String b) {
-        StringBuilder result = new StringBuilder();
-        for (int i = 0, k = 0; i < b.length(); i++, k++) {
-            if (k == 7) {
-                k = -1;
-                continue;
-            }
-            result.append(b.charAt(i));
-        }
-        return result.toString();
-    }
-
     //Генерация ключей для раундов
     private String[] generateRounds(String binaryWithoutCheckBits) {
         //TODO(Закончить функцию генерации ключей для раундов)
@@ -73,7 +60,6 @@ public class Key {
         int counter = 0;
         for (int i = 0, k = 0; i < 64; i++, k++) {
             if (k == 7) {
-//                if (i > 60)
                 if (counter % 2 == 0) {
                     if (i == 63)
                         result = result.substring(0, i) + "1";

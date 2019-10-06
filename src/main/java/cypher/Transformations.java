@@ -35,25 +35,6 @@ public class Transformations {
         return binary;
     }
 
-    public static String stringToBinaryOld(String s) {
-        byte[] bytes = new byte[0];
-        try {
-            bytes = s.getBytes("UTF-8");
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }
-        StringBuilder binary = new StringBuilder();
-        for (byte b : bytes) {
-            int val = b;
-            for (int i = 0; i < 8; i++) {
-                binary.append((val & 128) == 0 ? 0 : 1);
-                val <<= 1;
-            }
-            binary.append(' ');
-        }
-        return String.valueOf(binary);
-    }
-
     public static String binaryToString(String b) {
         String result = "";
         if (b == null)
@@ -76,31 +57,6 @@ public class Transformations {
 
         return result;
     }
-
-    public static String binaryToStringOld(String b) {
-        String result = "";
-        if (b == null)
-            return "";
-        b = b.replace(" ", "");
-//        System.out.println(b);
-//        result = Arrays.stream(b.split("(?<=\\G.{8})"))/* regex to split the bits array by 8*/
-//                .parallel()
-//                .map(eightBits -> (char) Integer.parseInt(eightBits, 2))
-//                .collect(
-//                        StringBuilder::new,
-//                        StringBuilder::append,
-//                        StringBuilder::append
-//                ).toString();
-        byte[] ret = new byte[b.length() / 8];
-        for (int i = 0; i < ret.length; i++) {
-            String chunk = b.substring(i * 8, i * 8 + 8);
-            ret[i] = (byte) Short.parseShort(chunk, 2);
-        }
-        result = new String(ret, StandardCharsets.UTF_8);
-
-        return result;
-    }
-
 
     //Преобразует одномерный массив в двумерный
     public static int[][] oneToTwoDimensions(int[] oneDimArray, int rows, int columns) {
