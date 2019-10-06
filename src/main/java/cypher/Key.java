@@ -8,11 +8,15 @@ package cypher;
 public class Key {
 
     private String key;
-    //    private String keyTransformed;
+    private String keyTransformed;
+    private String binaryTransformed;
     private String binary;
-    private String [] rounds;
+    private String[] rounds;
     private String binaryWithoutCheckBits;
 
+    public String getBinary() {
+        return binary;
+    }
 
     public String getKey() {
         return key;
@@ -27,19 +31,19 @@ public class Key {
     }
 
 
-//    private String binaryTransformed;
+    //    private String binaryTransformed;
     public Key(String key) {
         this.key = key;
-        if (key.length() != 8) {
-            System.err.println("The key should have 8 characters!!!");
+        if (key.length() != 7) {
+            System.err.println("The key should have 7 characters!!!");
             System.exit(1);
         }
-        this.binary = Transformations.stringToBinary(key).replace(" ", "");
-        this.binaryWithoutCheckBits = transformToBinaryWithoutCheckBits(this.binary);
+        this.binaryWithoutCheckBits = Transformations.stringToBinary(key);
         this.rounds = generateRounds(binaryWithoutCheckBits);
         //Binary
-        //        keyTransformation(this.binary);
-        //        this.keyTransformed = Transformations.binaryToString(binaryTransformed);
+        this.binaryTransformed = keyTransformation(this.binaryWithoutCheckBits);
+        this.binary = this.binaryTransformed;
+        this.keyTransformed = Transformations.binaryToString(binaryTransformed);
     }
 
     //Удаляет check биты из ключа
@@ -56,19 +60,15 @@ public class Key {
     }
 
     //Генерация ключей для раундов
-    private String[] generateRounds(String binaryWithoutCheckBits){
+    private String[] generateRounds(String binaryWithoutCheckBits) {
         //TODO(Закончить функцию генерации ключей для раундов)
-        String [] rounds = new String[16];
-
-
-
+        String[] rounds = new String[16];
 
         return rounds;
     }
 
 
-/*
-    private void keyTransformation(String sevenBytes) {
+    private String keyTransformation(String sevenBytes) {
         String result = sevenBytes.replace(" ", "");
         int counter = 0;
         for (int i = 0, k = 0; i < 64; i++, k++) {
@@ -102,8 +102,8 @@ public class Key {
                 k = -1;
             }
         }
-        this.binaryTransformed = result;
-    }*/
+        return result;
+    }
 
 
 }

@@ -10,8 +10,32 @@ import java.util.Arrays;
  */
 
 public class Transformations {
-
     public static String stringToBinary(String s) {
+        String binary = "";
+        for (int i = 0; i < s.length(); i++) {
+            String x = "";
+            int count = 0;
+            int n = s.charAt(i);
+            while (n > 0) {
+                int a = n % 2;
+                if (a == 1) {
+                    count++;
+                }
+                x = a + "" + x;
+                n = n / 2;
+            }
+            while (x.length() < 8)
+                x = "0" + x;
+            if (i == 0)
+                binary += x;
+            else
+                binary += " " + x;
+            x = "";
+        }
+        return binary;
+    }
+
+    public static String stringToBinaryOld(String s) {
         byte[] bytes = new byte[0];
         try {
             bytes = s.getBytes("UTF-8");
@@ -31,6 +55,29 @@ public class Transformations {
     }
 
     public static String binaryToString(String b) {
+        String result = "";
+        if (b == null)
+            return "";
+        b = b.replace(" ", "");
+
+        System.out.println(b);
+        System.out.println(b.length());
+
+        for (int i = 0, k = 0; i < 65; i++, k++) {
+            if (k == 7) {
+                int num = Integer.parseInt(b.substring(i - 7, i+1), 2);
+                result += "" + (char) num;
+                k = -1;
+                continue;
+            }
+
+
+        }
+
+        return result;
+    }
+
+    public static String binaryToStringOld(String b) {
         String result = "";
         if (b == null)
             return "";
@@ -68,7 +115,6 @@ public class Transformations {
         }
         return twoDimArray;
     }
-
 
 
     //Преобразует двумерный массив в одномерный

@@ -12,10 +12,12 @@ import java.io.UnsupportedEncodingException;
 
 public class Main {
 
-    public static void main(String[] args) throws UnsupportedEncodingException {
-        Key key = new Key("keyke ke");
+    public static void main(String[] args) {
+
+        Key key = new Key("keykeke");
         DES des = new DES(key);
-        des.encrypt("texthelloworldhellyeah");
+        key.
+        des.encrypt("sample plain text");
 
 
     }

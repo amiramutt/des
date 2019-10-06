@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="81730cc1-8011-40f6-89ca-9ba9590df83d" name="Default Changelist" comment="" />
+    <list default="true" id="81730cc1-8011-40f6-89ca-9ba9590df83d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cypher/Key.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cypher/Key.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cypher/Transformations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cypher/Transformations.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cypher/Constants.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cypher/Constants.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cypher/Key.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cypher/Key.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cypher/Transformations.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cypher/Transformations.class" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,7 +24,11 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1RNYcjwEoAMaJP1nLOYheUzsi4J" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -91,10 +104,25 @@
       <workItem from="1569751776491" duration="10434000" />
       <workItem from="1569817557641" duration="3215000" />
       <workItem from="1569986627054" duration="1323000" />
+      <workItem from="1570000837473" duration="702000" />
+      <workItem from="1570358575757" duration="5769000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
