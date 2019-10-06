@@ -16,7 +16,6 @@ public class Main {
 
         Key key = new Key("keykeke");
         DES des = new DES(key);
-        key.
         des.encrypt("sample plain text");
 
 
