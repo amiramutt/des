@@ -41,8 +41,6 @@ public class Transformations {
             return "";
         b = b.replace(" ", "");
 
-        System.out.println(b);
-        System.out.println(b.length());
 
         for (int i = 0, k = 0; i < 65; i++, k++) {
             if (k == 7) {
