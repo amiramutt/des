@@ -17,7 +17,6 @@ public class Main {
         Key key = new Key("keykeke");
         DES des = new DES(key);
         des.encrypt("sample plain text");
-        des.firstIp("0101100101001010111010100101000111010110100101110100101101011010");
 
 
     }

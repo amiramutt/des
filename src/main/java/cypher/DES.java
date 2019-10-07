@@ -72,7 +72,7 @@ public class DES {
     }
 
     //Начальная IP перестановка
-    public String firstIp(String b) {
+    private String firstIp(String b) {
         String result = "";
         int firstIp[] = Transformations.twoToOneDimensions(Constants.FIRST_IP_PERMUTATION);
 
@@ -84,8 +84,7 @@ public class DES {
     }
 
     //Конечная IP перестановка
-    public String lastIp(String b) {
-        //TODO(конечная IP перестановка)
+    private String lastIp(String b) {
         String result = "";
 
         int lastIp[] = Transformations.twoToOneDimensions(Constants.LAST_IP_PERMUTATION);
@@ -94,7 +93,6 @@ public class DES {
             result += b.charAt(lastIp[i] - 1);
 
         return result;
-
     }
 
     //P-box расширения с 32 до 48 битов
