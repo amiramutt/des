@@ -38,11 +38,12 @@ public class DES {
 
     private String encryptEightBytes(String b) {
         String result = "";
-        result = b;
+        result = firstIp(b);
         for (int i = 1; i <= 16; i++) {
             result = round(result, i);
         }
 
+        result = lastIp(result);
         return result;
     }
 
@@ -66,9 +67,25 @@ public class DES {
             result = left + right;
         else
             result = right + left;
+
         return result;
     }
 
+private String firstIp(String b){
+    //TODO(начальна IP перестановка)
+    String result = "";
+
+    return result;
+
+}
+
+private String lastIp(String b){
+    //TODO(конечная IP перестановка)
+    String result = "";
+
+    return result;
+
+}
 
     //P-box расширения с 32 до 48 битов
     private String pBox(String right) {

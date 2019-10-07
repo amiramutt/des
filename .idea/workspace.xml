@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="81730cc1-8011-40f6-89ca-9ba9590df83d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cypher/Transformations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cypher/Transformations.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/cypher/Key.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cypher/Key.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/cypher/Transformations.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cypher/Transformations.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cypher/DES.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cypher/DES.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -105,6 +101,7 @@
       <workItem from="1570358575757" duration="7414000" />
       <workItem from="1570386462808" duration="587000" />
       <workItem from="1570428603778" duration="350000" />
+      <workItem from="1570450860393" duration="236000" />
     </task>
     <servers />
   </component>
