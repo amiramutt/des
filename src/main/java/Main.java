@@ -14,7 +14,10 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Key key = new Key("keykeke");
+        Key key = new Key("abcdefg");
+        for (int i = 0; i < key.getRounds().length; i++) {
+            System.out.println(key.getRounds()[i]);
+        }
         DES des = new DES(key);
         des.encrypt("sample plain text");
 
