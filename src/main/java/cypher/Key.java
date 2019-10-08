@@ -48,109 +48,71 @@ public class Key {
 
     //Генерация ключей для раундов
     private String[] generateRounds(String binaryWithoutCheckBits) {
-        int nshift;char temp1,temp2=0;
-        //TODO(Закончить функцию генерации ключей для раундов)
-        String [] rounds = new String[16];
-        char key[][]=new char[16][48];
+        int nshift;
+        char temp1, temp2 = 0;
+        String[] rounds = new String[16];
+        char key[][] = new char[16][48];
 
+        int[] pbox = Transformations.twoToOneDimensions(Constants.P_BOX_KEY_C0_D0);
 
-        int[] pbox=Transformations.twoToOneDimensions(Constants.P_BOX_KEY_C0_D0);
-
-
-        char[]key1=new char[56];
-
+        char[] key1 = new char[56];
 
         //string to char array
-        char[] parts = binaryWithoutCheckBits.replace(" ",  "").toCharArray();
+        char[] parts = binaryWithoutCheckBits.replace(" ", "").toCharArray();
 
-        char [] stringToCharArrayLEFT=new char[28];
-        char [] stringToCharArrayRIGHT=new char[28];
+        char[] stringToCharArrayLEFT = new char[28];
+        char[] stringToCharArrayRIGHT = new char[28];
 
+        for (int i = 0; i < 56; i++)
+            key1[i] = parts[pbox[i] - 1];
 
-        for(int i=0;i<56;i++)
-            key1[i]=parts[pbox[i]-1];
+        for (int i = 0; i < 28; i++)
+            stringToCharArrayLEFT[i] = key1[i];
+        for (int i = 0; i < 28; i++)
+            stringToCharArrayRIGHT[i] = key1[i + 28];
 
+        int key2[] = Transformations.twoToOneDimensions(Constants.P_BOX_KEY_each28to24_BITS);
 
-
-        for(int i=0;i<28;i++)
-            stringToCharArrayLEFT[i]=key1[i];
-        for(int i=0;i<28;i++)
-            stringToCharArrayRIGHT[i]=key1[i+28];
-
-
-        int key2[]=Transformations.twoToOneDimensions(Constants.P_BOX_KEY_each28to24_BITS);
-
-
-        //System.out.println(parts[1]); //second part
-
-        for(int i=0;i<16;i++)
-        {
-            if( i==0||i==1||i==8||i==15)  //условия сдвига на 1 или 2 цифры
-                nshift=1;
+        for (int i = 0; i < 16; i++) {
+            if (i == 0 || i == 1 || i == 8 || i == 15)  //условия сдвига на 1 или 2 цифры
+                nshift = 1;
             else
-                nshift=2;
-            if(nshift==1)
-            {
+                nshift = 2;
+            if (nshift == 1) {
 
-
-                temp1=stringToCharArrayLEFT[0];
-                temp2=stringToCharArrayRIGHT[0];
-                for(int j=0;j<27;j++)
-                {
-                    stringToCharArrayLEFT[j]=stringToCharArrayLEFT[j+1];
-
-                    stringToCharArrayRIGHT[j]=stringToCharArrayRIGHT[j+1];
+                temp1 = stringToCharArrayLEFT[0];
+                temp2 = stringToCharArrayRIGHT[0];
+                for (int j = 0; j < 27; j++) {
+                    stringToCharArrayLEFT[j] = stringToCharArrayLEFT[j + 1];
+                    stringToCharArrayRIGHT[j] = stringToCharArrayRIGHT[j + 1];
                 }
-                stringToCharArrayLEFT[27]=temp1;
-                stringToCharArrayRIGHT[27]=temp2;
+                stringToCharArrayLEFT[27] = temp1;
+                stringToCharArrayRIGHT[27] = temp2;
 
-
-
-            }
-            else if(nshift==2){
-                for (int io=0;io<2;io++){
-                    temp1=stringToCharArrayLEFT[0];
-                    temp2=stringToCharArrayRIGHT[0];
-                    for(int j=0;j<27;j++)
-                    {
-                        stringToCharArrayLEFT[j]=stringToCharArrayLEFT[j+1];
-
-                        stringToCharArrayRIGHT[j]=stringToCharArrayRIGHT[j+1];
+            } else {
+                for (int io = 0; io < 2; io++) {
+                    temp1 = stringToCharArrayLEFT[0];
+                    temp2 = stringToCharArrayRIGHT[0];
+                    for (int j = 0; j < 27; j++) {
+                        stringToCharArrayLEFT[j] = stringToCharArrayLEFT[j + 1];
+                        stringToCharArrayRIGHT[j] = stringToCharArrayRIGHT[j + 1];
                     }
-                    stringToCharArrayLEFT[27]=temp1;
-                    stringToCharArrayRIGHT[27]=temp2;
+                    stringToCharArrayLEFT[27] = temp1;
+                    stringToCharArrayRIGHT[27] = temp2;
                 }
 
             }
 
-            for(int j=0;j<24;j++)
-                key [i][j]=stringToCharArrayLEFT[key2[j]-1];
-            for(int j=24;j<48;j++)
-                key[i][j]=stringToCharArrayRIGHT[key2[j]-1-28];
+            for (int j = 0; j < 24; j++)
+                key[i][j] = stringToCharArrayLEFT[key2[j] - 1];
+            for (int j = 24; j < 48; j++)
+                key[i][j] = stringToCharArrayRIGHT[key2[j] - 1 - 28];
 
         }
 
-
-
-//        for (int i = 0; i < 16; i++) {
-//            for (int j = 0; j <48; j++) {
-//                System.out.print(key[i][j]);
-//
-//            }
-//            System.out.println();
-//        }
-
-
-        for(int i=0;i<16;i++) {
-                rounds[i] = String.valueOf(key[i]);
+        for (int i = 0; i < 16; i++) {
+            rounds[i] = String.valueOf(key[i]);
         }
-
-//        for(int i=0;i<16;i++) {
-//            System.out.println(rounds[i]);
-//        }
-
-
-
 
         return rounds;
     }

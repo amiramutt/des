@@ -1,9 +1,5 @@
 package cypher;
 
-import java.io.UnsupportedEncodingException;
-import java.nio.charset.StandardCharsets;
-import java.util.Arrays;
-
 /**
  * File has been created by "zheka"
  * Date:  "28.09.2019"
