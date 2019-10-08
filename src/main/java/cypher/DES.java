@@ -140,15 +140,6 @@ public class DES {
 
         return result;
     }
-
-
-
-  /*  public String decrypt(String text){
-        String result = "";
-
-        return result;
-    }*/
-
     public Key getKey() {
         return key;
     }
