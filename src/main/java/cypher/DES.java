@@ -115,11 +115,28 @@ public class DES {
 
     //Набор с-боксов
     private String sBox(String rightFunc) {
-        //TODO(S-Box'ы)
+        String lastOutput ="";
+        String[] parts = new String[8];
+        
+        for (int i = 0; i < 8; i++) {
+            parts[i] = rightFunc.substring(i * 6, (i * 6) + 6);
+        }
 
-        String result = "";
+        for (int i = 0; i < 8; i++) {
+            String output;
+            rightFunc=parts[i];
 
-        return result;
+            String row = rightFunc.substring(0, 1) + rightFunc.substring(5, 6);
+            String col = rightFunc.substring(1, 5);
+
+            int irow = Integer.parseInt(row, 2);
+            int icol = Integer.parseInt(col, 2);
+            int ioutput = Constants.S_BOX[i][irow][icol];
+            
+            output = String.format("%4s", Integer.toBinaryString(ioutput)).replace(' ', '0');
+            lastOutput +=output;
+        }
+        return lastOutput;
     }
 
     //прямой пи-бокс
